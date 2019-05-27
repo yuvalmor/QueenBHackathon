@@ -4,123 +4,162 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTask"
-    >
+    android:background="#FFFFFF"
+    tools:context=".AddTask">
 
-    <EditText
-        android:id="@+id/CourseName"
+    <ImageView
         android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_weight="15"
+        android:src="@drawable/logo2"
+        android:text="My Task Manager"
+        app:layout_constraintBottom_toTopOf="@+id/CourseNameRoot"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/CourseNameRoot"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:hint="Course Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/TaskName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></EditText>
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/TaskNameRoot">
 
-    <EditText
-        android:id="@+id/TaskName"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/CourseName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Cousre Name"
+            android:inputType="textPersonName"
+            android:shadowColor="#FFC107"
+            android:textColorHighlight="#FFC107"
+            android:textColorLink="#FF5722"
+            android:textCursorDrawable="@android:color/holo_orange_dark"></EditText>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/TaskNameRoot"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="5dp"
-        android:hint="Task Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/TaskDescription"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CourseName"></EditText>
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/TaskDescriptionRoot">
 
-    <EditText
-        android:id="@+id/TaskDescription"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/TaskName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Task Name"
+            android:inputType="textPersonName"
+            android:textColorHighlight="#FFC107"
+            android:textColorLink="#FF5722"
+            android:textCursorDrawable="@android:color/holo_orange_dark" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/TaskDescriptionRoot"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+
         android:layout_marginLeft="8dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:hint="Description"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TaskName"></EditText>
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/editText1Root">
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/TaskDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Description"
+            android:inputType="textPersonName"
+            android:textColorHighlight="#FFC107"
+            android:textColorLink="#FF5722"
+            android:textCursorDrawable="@android:color/holo_orange_dark" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/editText1Root"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:ems="10"
-        android:hint="Enter Date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TaskDescription" />
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/partsTextRoot">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:ems="10"
+            android:hint="Enter Date"
+            android:textColorHighlight="#FFC107"
+            android:textColorLink="#FF5722"
+            android:textCursorDrawable="@android:color/holo_orange_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.043" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/partsTextRoot"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
         android:layout_marginStart="8dp"
+
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Get Date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toEndOf="@+id/editText1"
-        app:layout_constraintTop_toBottomOf="@+id/TaskDescription" />
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:textSize="18dp"/>
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/finish">
 
-    <EditText
-        android:id="@+id/partsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
-        android:digits="0123456789"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+        <EditText
+            android:id="@+id/partsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:digits="0123456789"
+            android:inputType="numberDecimal"
+            android:textColorHighlight="#FFC107"
+            android:textColorLink="#FF5722"
+            android:textCursorDrawable="@android:color/holo_orange_dark"
+            app:layout_constraintTop_toBottomOf="@+id/editText1Root" />
+    </android.support.v7.widget.CardView>
 
     <Button
         android:id="@+id/finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="55dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="#FBC28B"
         android:onClick="finishClick"
         android:text="Finish"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/partsText" />
+        app:layout_constraintTop_toBottomOf="@+id/partsTextRoot" />
 </android.support.constraint.ConstraintLayout>

@@ -21,14 +21,15 @@
             android:layout_weight="15"
             android:text="My Task Manager" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_height="0dp"
-                android:layout_weight="10"
-                android:layout_width="match_parent"
-                android:text="Button"
-                android:onClick="createTask"
-                />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="78dp"
+            android:layout_height="10dp"
+            android:layout_weight="10"
+            android:background="#FDC088"
+            android:onClick="createTask"
+            android:text="+"
+            android:textSize="24dp" />
 
 
         <android.support.v7.widget.RecyclerView
