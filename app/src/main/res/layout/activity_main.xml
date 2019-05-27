@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
 
+
     <LinearLayout
         android:weightSum="100"
         android:layout_width="match_parent"
@@ -20,11 +21,14 @@
             android:layout_weight="15"
             android:text="My Task Manager" />
 
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="10" />
+            <Button
+                android:id="@+id/button"
+                android:layout_height="0dp"
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:text="Button"
+                android:onClick="createTask"
+                />
 
 
         <android.support.v7.widget.RecyclerView
@@ -42,5 +46,6 @@
 
 
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

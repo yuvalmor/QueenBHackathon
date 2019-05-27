@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createTask(View view){
-        Intent taskIntent = new Intent(this,AddTask.class);
+        Intent taskIntent = new Intent(this, AddTask.class);
 
         //start the activity
         startActivity(taskIntent);

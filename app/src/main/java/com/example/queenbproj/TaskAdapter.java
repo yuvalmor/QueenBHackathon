@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
@@ -30,7 +33,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         Task task = taskList.get(position);
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(task.getTitle());
+        holder.textView.setText(task.getTitle() + " / " + task.getCourse());
+        holder.submit_date.setText("sumbit date: " + task.getSubmitDate().toString());
+        String time_left = "time left ";
+
+
+
+       // holder.days_left.setText();
         //holder.getCustomView().setData();
     }
 
@@ -42,10 +51,17 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+        TextView submit_date;
+        TextView description;
+        TextView days_left;
 
         ViewHolder(View v) {
+
             super(v);
             textView = v.findViewById(R.id.title);
+            submit_date = v.findViewById(R.id.date);
+            description = v.findViewById(R.id.details);
+            days_left = v.findViewById(R.id.days_left);
         }
     }
 
