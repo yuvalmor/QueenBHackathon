@@ -1,6 +1,7 @@
 package com.example.queenbproj;
 
 import android.app.DatePickerDialog;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -42,13 +43,19 @@ public class AddTask extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
+        this.setTitle("Add Task");
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        //setTitle("Task");
 
         courseName = (EditText)findViewById(R.id.CourseName);
         title = (EditText)findViewById(R.id.TaskName);
         description = (EditText)findViewById(R.id.TaskDescription);
         parts = (EditText)findViewById(R.id.partsText);
 
-        tvw=(TextView)findViewById(R.id.textView1);
+        //tvw=(TextView)findViewById(R.id.textView1);
         eText=(EditText) findViewById(R.id.editText1);
         eText.setInputType(InputType.TYPE_NULL);
         eText.setOnClickListener(new View.OnClickListener() {
@@ -69,13 +76,7 @@ public class AddTask extends AppCompatActivity {
                 picker.show();
             }
         });
-        btnGet=(Button)findViewById(R.id.button1);
-        btnGet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvw.setText("Selected Date: "+ eText.getText());
-            }
-        });
+
     }
 
     public void finishClick(View view){
