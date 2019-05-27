@@ -47,7 +47,19 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         String time_left = "time left ";
 
 
-        holder.days_left.setText("days left : 2");
+        Calendar thatDay = Calendar.getInstance();
+        thatDay.set(Calendar.DAY_OF_MONTH,30);
+        thatDay.set(Calendar.MONTH,5); // 0-11 so 1 less
+        thatDay.set(Calendar.YEAR, 2019);
+
+        Calendar today = Calendar.getInstance();
+        today.set(Calendar.DAY_OF_MONTH,27);
+        today.set(Calendar.MONTH,5); // 0-11 so 1 less
+        today.set(Calendar.YEAR, 2019);
+
+        long diff =  thatDay.getTimeInMillis()-today.getTimeInMillis(); //result in millis
+        long days = diff / (24 * 60 * 60 * 1000);
+        holder.days_left.setText(days+" left");
 
         //holder.getCustomView().setData();
     }
