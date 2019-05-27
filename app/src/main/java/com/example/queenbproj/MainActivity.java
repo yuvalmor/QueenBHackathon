@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 import java.io.FileOutputStream;
 import java.util.ArrayList;
