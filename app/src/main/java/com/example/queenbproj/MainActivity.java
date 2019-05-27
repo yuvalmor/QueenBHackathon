@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import android.view.View;
 
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         //insert list from file (Stav & almog TODOOOOOOOOOOOOOOOOOO)
-        Task t1 = new Task();
+        Task t1 = new Task("OS", "HW4", "blabla", 3, new Date(1,1,1990));
         t1.setTitle("HW 4");
         t1.setParts(4);
         taskList = new ArrayList<>();
