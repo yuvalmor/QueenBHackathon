@@ -92,7 +92,9 @@ public class AddTask extends AppCompatActivity {
             MainActivity.allTasks.add(task);
             Toast message = Toast.makeText(this, "Task Added!",
                     Toast.LENGTH_SHORT);
+
             message.show();
+            MainActivity.mAdapter.notifyDataSetChanged();
             finish();
         } catch (ParseException e) {
 

@@ -6,7 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +18,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public TaskAdapter(List<Task> taskList) {
+
         this.taskList = taskList;
     }
 
@@ -29,17 +32,23 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     // Replace the contents of a view (invoked by the layout manager)
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position)  {
         Task task = taskList.get(position);
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.setText(task.getTitle() + " / " + task.getCourse());
-        holder.submit_date.setText("sumbit date: " + task.getSubmitDate().toString());
+        holder.textView.setText(task.getTitle() + " on Course:" + task.getCourse());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        String date = "";
+        try {
+             date = simpleDateFormat.format(task.getSubmitDate());
+        } catch (Exception e){}
+        holder.submit_date.setText("submit date: " + date);
+
         String time_left = "time left ";
 
 
+        holder.days_left.setText("days left : 2");
 
-       // holder.days_left.setText();
         //holder.getCustomView().setData();
     }
 
@@ -58,10 +67,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         ViewHolder(View v) {
 
             super(v);
+
             textView = v.findViewById(R.id.title);
             submit_date = v.findViewById(R.id.date);
             description = v.findViewById(R.id.details);
             days_left = v.findViewById(R.id.days_left);
+
         }
     }
 

@@ -23,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
     static List<Task> allTasks;
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
+    public static RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private List<Task> taskList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +45,18 @@ public class MainActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        //insert list from file (Stav & almog TODOOOOOOOOOOOOOOOOOO)
-        Task t1 = new Task("OS", "HW4", "blabla", 3, new Date(1,1,1990));
-        t1.setTitle("HW 4");
-        t1.setParts(4);
-        taskList = new ArrayList<>();
-        taskList.add(t1);
+
+        if(allTasks.isEmpty()) {
+
+            Task t1 = new Task("OS", "HW4", "blabla", 3, new Date(1,1,1990));
+            allTasks.add(t1);
+
+            Task t2 = new Task("OS", "HW5", "", 3, new Date(1,2,1990));
+          // allTasks.add(t2);
+        }
 
         // specify an adapter (see also next example)
-        mAdapter = new TaskAdapter(taskList);
+        mAdapter = new TaskAdapter(allTasks);
         recyclerView.setAdapter(mAdapter);
     }
 
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         //start the activity
         startActivity(taskIntent);
     }
+
 
 
 }
