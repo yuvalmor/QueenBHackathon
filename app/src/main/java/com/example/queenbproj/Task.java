@@ -1,8 +1,9 @@
 package com.example.queenbproj;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Task {
+public class Task implements Serializable {
 
     public String getTitle() {
         return title;
@@ -52,14 +53,25 @@ public class Task {
         this.precentageFromGrade = precentageFromGrade;
     }
 
+    public void setDone(int done){
+        this.done = done;
+    }
+
     private String title;
     private String course;
     private Date submitDate;
     private String decription;
     private int parts;
     private int precentageFromGrade;
+    private int done;
 
-
-
+    public Task(String course,String title,String decription,int parts,Date submitDate){
+        this.course = course;
+        this.title = title;
+        this.decription = decription;
+        this.parts = parts;
+        this.submitDate = submitDate;
+        done = 0;
+    }
 
 }
